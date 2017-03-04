@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<base href='/'>
+	<title>User Story</title>
+
+	
+	
+	<link rel="stylesheet" href="app/views/resource/bootstrap.min.css">
+	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> -->
+    <script src="app/views/resource/jquery-1.10.2.js"></script>
+  <script src="app/views/resource/bootstrap.min.js"></script>
+
+  <link rel="stylesheet" href="app/views/resource/jquery-ui.css" />
+    <script src="app/views/resource/jquery-ui.js"></script>
+
+	<script src="app/views/resource/angular.js">     </script>
+	<script src="app/views/resource/angular-route.js"></script>
+	<script src="app/views/resource/angular-resource.js"></script>
+	
+
+	<!-- Services-->
+	<script type="text/javascript" src="app/services/musicService.js"></script>
+	
+
+	<!-- Controllers-->
+	<script type="text/javascript" src="app/controllers/musicCtrl.js"></script>
+
+	<script type="text/javascript" src='app/app.routes.js'></script>
+	<script type="text/javascript" src='app/app.js'></script>
+
+</head>
+<body ng-app="MyApp">
+
+<header>
+
+	<div class="navbar navbar-default">
+	
+		<div class="container">
+
+			<!-- <div class="navbar-header">
+
+				<a href="/" class="navbar-brand"> <span class="glyphicon glyphicon-book"></span> My story </a>
+				<a href="/stories" class="navbar-brand"> <span class="glyphicon glyphicon-list"></span> All stories </a>
+
+			</div> -->
+
+			<ul class="nav navbar-nav">
+				<!-- <li><a href="/users"></a></li> -->
+				<li><h3><a href="/">Project Management</a></h3></li>
+			</ul>
+			
+			<!-- <ul class="nav navbar-nav navbar-right">
+				<li ng-if="!main.loggedIn"><a href="/login">Login</a></li>
+				<li ng-if="!main.loggedIn"><a href="/signup">Signup</a></li>
+				<li ng-if="main.loggedIn"><a href="#">Hello {{ main.user.name }}</a></li>
+				<li ng-if="main.loggedIn"><a href="#" ng-click="main.doLogout()">Logout</a></li>
+			</ul> -->
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="/applications">Application</a></li>
+				<li><a href="/operations">Operation</a></li>
+				<li><a href="/templates">Template</a></li>
+			</ul>
+			
+		</div>
+		
+	</div>
+
+</header>
+
+<main class="container">
+
+	<div ng-view> </div>
+
+</main>
+
+</body>
+</html>

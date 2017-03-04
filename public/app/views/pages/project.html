@@ -1,0 +1,77 @@
+
+<h2>{{pageTitle}}</h2>
+<div class="row" >
+
+	<div class="col-md-12" >
+
+		<form method="post" class="form-sigin" name="appForm" ng-submit='main.searchMusic()'>
+
+			<div class="form-group">
+			    <label for="title">Keyword:</label>
+			    <input type="text" class="form-control" id="keyword" ng-keyup="complete()" ng-model="keyword" placeholder="search" required>
+			 </div>
+
+			<button ng-disabled="keyword.$idirty || keyword.$invalid" type="submit" class="btn btn-primary">SEARCH </button>
+			
+		</form>
+		
+	</div>
+
+	<div ng-show="loading" class="loading col-md-12 text-center"><img align="middle" src="app/views/resource/Loading_icon.gif">LOADING...</div>
+	<div class="col-md-12 result" ng-show="result">
+		<div ng-hide="isAlbum" class="col-sm-6">
+		<h3>Albums({{albums.length}})</h3>
+		<table class="table">
+		    <thead>
+		      <tr>
+		        <th>Title</th>
+		        <th>Artist</th>
+		        <th>Icon</th>
+		        <th>URL</th>
+		      </tr>
+		    </thead>
+		    <tbody>
+		         
+		      <tr ng-class-odd="'success'" ng-class-even="'info'" ng-repeat="album in albums">
+		        <td>{{album.name}}</td>
+		        <td><span ng-repeat="at in album.artists">{{at.name}}</span></td>
+		        <td><img src="{{album.images[album.images.length-1].url}}"></td>
+		        <td><a target="_blank" href="{{album.external_urls.spotify}}">Click here</a></td>
+		      </tr>
+
+		      <tr ng-if="albums.length==0"><td colspan="4" class="text-center">No result found.</td></tr>
+		    
+		    </tbody>
+		</table>
+		</div>
+
+		<div ng-hide="isArtist" class="col-sm-6">
+		<h3>Artists({{artists.length}})</h3>
+		<table class="table">
+		    <thead>
+		      <tr>
+		        <th>Photo/Name</th>
+		        <th>Popularity</th>
+		        <th>Followers</th>
+		        <th>URL</th>
+		      </tr>
+		    </thead>
+		    <tbody>
+		         
+		      <tr ng-class-odd="'warning'" ng-class-even="'info'"  ng-repeat="artist in artists">
+		        <td><img src="{{artist.images[artist.images.length-1].url}}"><br/>{{artist.name}}</td>
+		        <td>{{artist.popularity}}</td>
+		        <td>{{artist.followers.total}}</td>
+		        <td><a target="_blank" href="{{artist.external_urls.spotify}}">Click here</a></td>
+		      </tr>
+
+		      <tr ng-if="artists.length==0"><td colspan="4" class="text-center">No result found.</td></tr>
+		      
+		    </tbody>
+		</table>
+		</div>
+			
+	</div>
+
+	
+</div>
