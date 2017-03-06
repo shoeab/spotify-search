@@ -22,6 +22,7 @@
     "angular-mocks": "^1.6.2",
     "body-parser": "^1.14.1",
     "express": "^4.13.3",
+    "jasmine-core": "^2.5.2",
     "mongoose": "^4.2.9"
   }
 }

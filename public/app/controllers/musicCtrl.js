@@ -5,13 +5,13 @@ angular.module('musicCtrl', ['musicService'])
 	$scope.loading = false; // Loader show false
 	$scope.result = false; // Result show false
 	var vm = this;
-	$scope.pageTitle = "My Page"; // Page title
+	$scope.pageTitle = "Search"; // Page title
 	console.log(localStorage.getItem("ky"));
 
 	if (allKeywords.length==0 && localStorage.getItem("ky") != null) // If allKeywords variable empty. Load from localStorage
 				allKeywords = localStorage.getItem("ky").split(',');
 	
-	/*Auto complete function*/
+	/*Search input field Auto complete function*/
 	$scope.complete=function(){ 
       	console.log(allKeywords);
 	    $( "#keyword" ).autocomplete({
